@@ -42,6 +42,15 @@ public class Tabuleiro {
 		peca[posicao.getLinha()][posicao.getColuna()] = pecas;
 		pecas.posicao = posicao;
 	}
+	public Peca removerPeca(Posicao posicao) {
+		if(pecas(posicao) == null) {
+			return null;
+		}
+		Peca aux = pecas(posicao);
+		aux.posicao = null;
+		peca[posicao.getLinha()][posicao.getColuna()] = null;
+		return aux;
+	}
 	private boolean posicaoExiste(int linha, int coluna) {
 		return linha >= 0 && linha <  this.linha && coluna >= 0 && coluna < this.coluna;
 	}
