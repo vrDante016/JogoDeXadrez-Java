@@ -13,5 +13,10 @@ public class Rei extends PecaXadrez{
 	public String toString() {
 		return "R";
 	}
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

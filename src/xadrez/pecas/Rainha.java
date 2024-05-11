@@ -13,5 +13,10 @@ public class Rainha extends PecaXadrez{
 	public String toString() {
 		return "Q";
 	}
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
