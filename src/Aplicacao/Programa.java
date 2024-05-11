@@ -27,7 +27,7 @@ public class Programa {
 				System.out.print("Alvo");
 				PosicaoXadrez alvo = UI.lerPosicaoXadrez(ler);
 				
-				PecaXadrez pecaCapturada = partida.pecaComida(origin, alvo);
+				PecaXadrez pecaCapturada = partida.iniciarJogoDeXadrez(origin, alvo);
 				}
 				catch(XadrezExcecao e){
 					System.out.println(e.getMessage());
