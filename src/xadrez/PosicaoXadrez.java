@@ -1,5 +1,6 @@
 package xadrez;
 
+import tabuleiroJogo.Posicao;
 import tabuleiroJogo.tabuleiroExcecao;
 
 public class PosicaoXadrez {
@@ -22,7 +23,16 @@ public class PosicaoXadrez {
 	protected int getLinha() {
 		return linha;
 	}
-	
+	protected Posicao toPosition() { 
+		return new Posicao(8 - linha, coluna - 'a');
+	}
+	protected static PosicaoXadrez paraPosicao(Posicao posicao) {
+		return new PosicaoXadrez((char)('a' - posicao.getColuna()), 8 - posicao.getLinha());
+	}
+	@Override
+	public String toString() {
+		return "" + coluna + linha;
+	}
 	
 }
 

@@ -23,6 +23,10 @@ public class PartidaDeXadrez {
 		}
 		return mat;
 	}
+	private void novoLugaDaPeca(char coluna, int linha, PecaXadrez pecaXadrez) {
+		tabuleiro.pecaNoLugar(pecaXadrez, new PosicaoXadrez(coluna, linha).toPosition());
+	}
+	
 	public void iniciarPartida() {
 		tabuleiro.pecaNoLugar(new Bispo(tabuleiro, Cores.BRANCO), new Posicao(2,1));
 	}

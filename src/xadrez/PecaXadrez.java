@@ -12,7 +12,7 @@ public class PecaXadrez extends Peca {
 		this.cores = cores;
 	}
 
-	protected Cores getCores() {
+	public Cores getCores() {
 		return cores;
 	}
 
