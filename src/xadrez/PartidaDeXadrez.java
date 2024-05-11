@@ -1,6 +1,8 @@
 package xadrez;
 
+import tabuleiroJogo.Posicao;
 import tabuleiroJogo.Tabuleiro;
+import xadrez.pecas.Bispo;
 
 public class PartidaDeXadrez {
 	
@@ -8,6 +10,7 @@ public class PartidaDeXadrez {
 	
 	public PartidaDeXadrez() {
 		tabuleiro = new Tabuleiro(8,8);
+		iniciarPartida();
 	}
 	
 	public PecaXadrez[][] getPecas(){
@@ -19,5 +22,8 @@ public class PartidaDeXadrez {
 			}
 		}
 		return mat;
+	}
+	public void iniciarPartida() {
+		tabuleiro.pecaNoLugar(new Bispo(tabuleiro, Cores.BRANCO), new Posicao(2,1));
 	}
 }
