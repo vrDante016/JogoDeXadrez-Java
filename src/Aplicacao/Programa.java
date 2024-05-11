@@ -1,11 +1,14 @@
 package Aplicacao;
 
+import xadrez.PartidaDeXadrez;
+
 public class Programa {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Olá mundo!");
-
+		PartidaDeXadrez partida = new PartidaDeXadrez();
+		UI.impressaoTabuleiro(partida.getPecas());
+		
 	}
 
 }

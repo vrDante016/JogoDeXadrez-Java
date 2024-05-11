@@ -2,31 +2,36 @@ package tabuleiroJogo;
 
 public class Tabuleiro {
 	
-	private Integer linha;
-	private Integer coluna;
+	private int linha;
+	private int coluna;
 	private Peca[][] peca;
 	
-	public Tabuleiro(Integer linha, Integer coluna) {
+	public Tabuleiro(int linha, int coluna) {
 		this.linha = linha;
 		this.coluna = coluna;
 		peca = new Peca[linha][coluna];
 	}
 
-	protected Integer getLinha() {
+	public int getLinha() {
 		return linha;
 	}
 
-	protected void setLinha(Integer linha) {
+	protected void setLinha(int linha) {
 		this.linha = linha;
 	}
 
-	protected Integer getColuna() {
+	public int getColuna() {
 		return coluna;
 	}
 
-	protected void setColuna(Integer coluna) {
+	protected void setColuna(int coluna) {
 		this.coluna = coluna;
 	}
-	
+	public Peca pecas(int linha, int coluna) {
+		return peca[linha][coluna];
+	}
+	public Peca pecas(Posicao posicao) {
+		return peca[posicao.getLinha()][posicao.getColuna()];
+	}
 	
 }
