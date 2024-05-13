@@ -3,8 +3,8 @@ package xadrez;
 import tabuleiroJogo.Peca;
 import tabuleiroJogo.Posicao;
 import tabuleiroJogo.Tabuleiro;
-import tabuleiroJogo.tabuleiroExcecao;
-import xadrez.pecas.Bispo;
+import xadrez.pecas.Rei;
+import xadrez.pecas.Torre;
 
 @SuppressWarnings({ "unused", "unused", "unused" })
 public class PartidaDeXadrez {
@@ -25,6 +25,11 @@ public class PartidaDeXadrez {
 			}
 		}
 		return mat;
+	}
+	public boolean[][] movimentosPossiveis(PosicaoXadrez originPosicao){
+		Posicao posicao =  originPosicao.toPosition();
+		validarPosicaoDeOrigin(posicao);
+		return tabuleiro.pecas(posicao).movimentosPossiveis();
 	}
 
 	public PecaXadrez iniciarJogoDeXadrez(PosicaoXadrez originPosicao, PosicaoXadrez alvoPosicao) {
@@ -62,6 +67,12 @@ public class PartidaDeXadrez {
 	}
 
 	public void iniciarPartida() {
-		tabuleiro.pecaNoLugar(new Bispo(tabuleiro, Cores.BRANCO), new Posicao(2, 1));
+		novoLugaDaPeca('d',1, new Rei(tabuleiro, Cores.BRANCO));
+		novoLugaDaPeca('d',2, new Torre(tabuleiro, Cores.BRANCO));
+		novoLugaDaPeca('b',2, new Torre(tabuleiro, Cores.BRANCO));
+		novoLugaDaPeca('b',1, new Torre(tabuleiro, Cores.BRANCO));
+		novoLugaDaPeca('c',1, new Torre(tabuleiro, Cores.BRANCO));
+		novoLugaDaPeca('c',2, new Torre(tabuleiro, Cores.BRANCO));
+		
 	}
 }

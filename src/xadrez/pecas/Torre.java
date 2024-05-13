@@ -23,7 +23,7 @@ public class Torre extends PecaXadrez{
 		
 		//cima
 		p.setValues(posicao.getLinha() - 1, posicao.getColuna());
-		while(getTabuleiro().posicaoExiste(p) && getTabuleiro().existeUmaPeca(p)) {
+		while(getTabuleiro().posicaoExiste(p) && !getTabuleiro().existeUmaPeca(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 			p.setLinha(p.getLinha() - 1);
 		}
@@ -34,7 +34,7 @@ public class Torre extends PecaXadrez{
 		
 		//esquerda 
 		p.setValues(posicao.getLinha(), posicao.getColuna() - 1);
-		while(getTabuleiro().posicaoExiste(p) && getTabuleiro().existeUmaPeca(p)) {
+		while(getTabuleiro().posicaoExiste(p) && !getTabuleiro().existeUmaPeca(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 			p.setColuna(p.getColuna() - 1);
 		}
@@ -45,7 +45,7 @@ public class Torre extends PecaXadrez{
 		
 		//direita
 		p.setValues(posicao.getLinha(), posicao.getColuna() + 1);
-		while(getTabuleiro().posicaoExiste(p) && getTabuleiro().existeUmaPeca(p)) {
+		while(getTabuleiro().posicaoExiste(p) && !getTabuleiro().existeUmaPeca(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 			p.setColuna(p.getColuna() + 1);
 		}
@@ -55,7 +55,7 @@ public class Torre extends PecaXadrez{
 		}
 		//para baixa 
 		p.setValues(posicao.getLinha() + 1, posicao.getColuna());
-		while(getTabuleiro().posicaoExiste(p) && getTabuleiro().existeUmaPeca(p)) {
+		while(getTabuleiro().posicaoExiste(p) && !getTabuleiro().existeUmaPeca(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 			p.setLinha(p.getLinha() + 1);
 		}
@@ -64,7 +64,7 @@ public class Torre extends PecaXadrez{
 	
 		}
 		
-		return null;
+		return mat;
 	}
 
 }

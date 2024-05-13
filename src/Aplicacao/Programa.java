@@ -23,10 +23,15 @@ public class Programa {
 				System.out.print("Origin");
 				PosicaoXadrez origin = UI.lerPosicaoXadrez(ler);
 				
+				boolean[][] movimentosPossiveis = partida.movimentosPossiveis(origin);
+				UI.clearScreen();
+				UI.impressaoTabuleiro(partida.getPecas(), movimentosPossiveis);
+				
 				System.out.println();
 				System.out.print("Alvo");
 				PosicaoXadrez alvo = UI.lerPosicaoXadrez(ler);
 				
+				@SuppressWarnings("unused")
 				PecaXadrez pecaCapturada = partida.iniciarJogoDeXadrez(origin, alvo);
 				}
 				catch(XadrezExcecao e){
