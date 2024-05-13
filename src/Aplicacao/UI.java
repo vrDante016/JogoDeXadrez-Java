@@ -1,7 +1,10 @@
 package Aplicacao;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import xadrez.Cores;
 import xadrez.PartidaDeXadrez;
@@ -34,12 +37,6 @@ public class UI {
 		 System.out.flush();
 		} 
 	
-	public static void primeitaPartida(PartidaDeXadrez partida) {
-		impressaoTabuleiro(partida.getPecas());
-		System.out.println();
-		System.out.println("turno " + partida.getTurno());
-		System.out.println("Esperando o jogador com a cor " + partida.getCorJogador());
-	}
 	public static PosicaoXadrez lerPosicaoXadrez(Scanner ler) {
 		try {
 		String s = ler.next();
@@ -50,6 +47,14 @@ public class UI {
 		catch(RuntimeException e){
 			throw new InputMismatchException("Erro lendo a posicão de xadrez, valores validos de 1 ao 8");
 		}
+	}
+	public static void primeitaPartida(PartidaDeXadrez partida, List<PecaXadrez> capturada) {
+		impressaoTabuleiro(partida.getPecas());
+		System.out.println();
+		pecasCapturadas(capturada);
+		System.out.println();
+		System.out.println("turno " + partida.getTurno());
+		System.out.println("Esperando o jogador com a cor " + partida.getCorJogador());
 	}
 	
 	public static void impressaoTabuleiro(PecaXadrez[][] peca) {
@@ -91,5 +96,17 @@ public class UI {
             }
         }
         System.out.print(" ");
+	}
+	private static void pecasCapturadas(List<PecaXadrez> capturada) {
+		List<PecaXadrez> white = capturada.stream().filter(x -> x.getCores() == Cores.BRANCO).collect(Collectors.toList());
+		List<PecaXadrez> preto = capturada.stream().filter(x -> x.getCores() == Cores.PRETO).collect(Collectors.toList());
+		System.out.println("Peça capituradas: ");
+		System.out.println("Brancas");
+		System.out.print(ANSI_WHITE);
+		System.out.println(Arrays.toString(white.toArray()));
+		System.out.print(ANSI_RESET);
+		System.out.println("Pretas");
+		System.out.print(ANSI_YELLOW);
+		System.out.println(Arrays.toString(preto.toArray()));
 	}
 }
