@@ -10,6 +10,7 @@ import tabuleiroJogo.Tabuleiro;
 import xadrez.pecas.Bispo;
 import xadrez.pecas.Cavalo;
 import xadrez.pecas.Peoes;
+import xadrez.pecas.Rainha;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -186,6 +187,7 @@ public class PartidaDeXadrez {
 	public void iniciarPartida() {
 		novoLugaDaPeca('a',1, new Torre(tabuleiro, Cores.BRANCO));
 		novoLugaDaPeca('h',1, new Torre(tabuleiro, Cores.BRANCO));
+		novoLugaDaPeca('d',1, new Rainha(tabuleiro, Cores.BRANCO));
 		novoLugaDaPeca('b',1, new Cavalo(tabuleiro, Cores.BRANCO));
 		novoLugaDaPeca('g',1, new Cavalo(tabuleiro, Cores.BRANCO));
 		novoLugaDaPeca('c',1, new Bispo(tabuleiro, Cores.BRANCO));
@@ -203,6 +205,7 @@ public class PartidaDeXadrez {
 		
 		novoLugaDaPeca('a',8, new Torre(tabuleiro, Cores.PRETO));
 		novoLugaDaPeca('h',8, new Torre(tabuleiro, Cores.PRETO));
+		novoLugaDaPeca('d',8, new Rainha(tabuleiro, Cores.PRETO));
 		novoLugaDaPeca('b',8, new Cavalo(tabuleiro, Cores.PRETO));
 		novoLugaDaPeca('g',8, new Cavalo(tabuleiro, Cores.PRETO));
 		novoLugaDaPeca('c',8, new Bispo(tabuleiro, Cores.PRETO));
