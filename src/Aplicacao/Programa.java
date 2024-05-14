@@ -18,7 +18,7 @@ public class Programa {
 		PartidaDeXadrez partida = new PartidaDeXadrez();
 		List<PecaXadrez> pecasCapturadas = new ArrayList();
 		
-		while(true) {
+		while(!partida.getCheckMate()) {
 			try {
 				UI.clearScreen();
 				UI.primeitaPartida(partida, pecasCapturadas);
@@ -34,7 +34,7 @@ public class Programa {
 				System.out.print("Alvo");
 				PosicaoXadrez alvo = UI.lerPosicaoXadrez(ler);
 				
-				@SuppressWarnings("unused")
+				
 				PecaXadrez pecaCapturada = partida.iniciarJogoDeXadrez(origin, alvo);
 				if(pecasCapturadas != null) {
 					pecasCapturadas.add(pecaCapturada);
@@ -51,6 +51,8 @@ public class Programa {
 				}
 				
 		}
+		UI.clearScreen();
+		UI.primeitaPartida(partida, pecasCapturadas);
 	}
 
 }
