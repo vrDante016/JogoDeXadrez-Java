@@ -39,6 +39,15 @@ public class Programa {
 				if(pecasCapturadas != null) {
 					pecasCapturadas.add(pecaCapturada);
 				}
+				if(partida.getPromocao() != null) {
+					System.out.println("Entre com a Peca que deseja promover (B:bispo/C:cavalo/Q:rainha/T:torre)");
+					String tipo = ler.nextLine().toUpperCase();
+					while (!tipo.equals("B") && !tipo.equals("Q") && !tipo.equals("C") && tipo.equals("T")) {
+						System.out.println("O valor é invalido! Entre novamento com os valores validos");
+						tipo = ler.next();
+					}
+					partida.replacePromcaoPeca(tipo);
+				}
 				}
 				catch(XadrezExcecao e){
 					System.out.println(e.getMessage());
